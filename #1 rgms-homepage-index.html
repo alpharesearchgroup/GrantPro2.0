@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Grant Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, nav, main, footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: #f5f5f5;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .content div {
+            flex: 1;
+            min-width: 280px;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .cta {
+            margin: 20px 0;
+        }
+
+        .section {
+            padding: 20px;
+            background: #f9f9f9;
+            margin: 20px 0;
+        }
+
+        .feature, .resource {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .feature div, .resource div {
+            flex: 1;
+            min-width: 280px;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #333;
+            color: #ccc;
+            padding: 10px;
+        }
+
+        .social a {
+            color: #ccc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a {
+            color: #ccc;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-row {
+            display: flex;
+            width: 200%;
+            height: 100px; /* Adjust height for smaller boxes */
+            animation: scroll 30s linear infinite;
+        }
+
+        .carousel-row:nth-child(2) {
+            animation-direction: reverse;
+        }
+
+        .carousel-row:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-item {
+            flex: 0 0 12.5%;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            background-color: #e1e1e1;
+            margin: 5px;
+            border-radius: 5px;
+            height: 80px; /* Adjust height for smaller boxes */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item {
+                flex: 0 0 25%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content, .feature, .resource {
+                flex-direction: column;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to Our Remote Grant Management System</h1>
+</header>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="#dashboard">Dashboard</a>
+</nav>
+<main class="container">
+    <section class="hero">
+        <h1>Streamline Your Grant Management Process</h1>
+        <p>Discover the ultimate solution for managing grants effectively and efficiently.</p>
+    </section>
+    <section class="content">
+        <div>
+            <h2><i class="fas fa-cogs"></i> User-Friendly Interface</h2>
+            <p>Our intuitive dashboard and customizable views help users stay organized and focused on their tasks.</p>
+        </div>
+        <div>
+            <h2><i class="fas fa-search"></i> Comprehensive Grant Search</h2>
+            <p>Advanced search filters and automated matching help users find the best funding opportunities quickly.</p>
+        </div>
+        <div>
+            <h2><i class="fas fa-pencil-alt"></i> Proposal Development Tools</h2>
+            <p>Access to templates, collaboration tools, and guided writing assistance to create high-quality proposals.</p>
+        </div>
+    </section>
+    <section class="cta">
+        <a href="#get-started">Get Started</a>
+    </section>
+</main>
+<section class="section about" id="about">
+    <h2>About Us</h2>
+    <p>We provide a comprehensive remote grant management system designed to simplify and streamline the entire grant lifecycle. Our solution caters to the needs of grant seekers, managers, and reviewers, ensuring efficient and successful grant management.</p>
+</section>
+<section class="section features" id="features">
+    <h2>Our Features</h2>
+    <div class="carousel">
+        <div class="carousel-row" id="row1">
+            <div class="carousel-item">User-Friendly Interface</div>
+            <div class="carousel-item">Comprehensive Grant Search and Matching</div>
+            <div class="carousel-item">Proposal Development Tools</div>
+            <div class="carousel-item">Budgeting and Financial Management</div>
+            <div class="carousel-item">Application Tracking and Management</div>
+            <div class="carousel-item">Compliance and Reporting</div>
+            <div class="carousel-item">Communication and Collaboration</div>
+            <div class="carousel-item">Performance Metrics and Analytics</div>
+        </div>
+        <div class="carousel-row" id="row2">
+            <div class="carousel-item">Grant Success Tracking</div>
+            <div class="carousel-item">Impact Measurement</div>
+            <div class="carousel-item">Custom Reports</div>
+            <div class="carousel-item">CRM Integration</div>
+            <div class="carousel-item">Accounting Software Integration</div>
+            <div class="carousel-item">Calendar Integration</div>
+            <div class="carousel-item">Data Encryption</div>
+            <div class="carousel-item">Access Controls</div>
+        </div>
+        <div class="carousel-row" id="row3">
+            <div class="carousel-item">Regular Backups</div>
+            <div class="carousel-item">Tutorials and Webinars</div>
+            <div class="carousel-item">Customer Support</div>
+            <div class="carousel-item">Community Forum</div>
+            <div class="carousel-item">Modular Design</div>
+            <div class="carousel-item">Scalable Infrastructure</div>
+            <div class="carousel-item">Custom Workflows</div>
+            <div class="carousel-item">Automation</div>
+        </div>
+    </div>
+</section>
+<section class="section resources" id="resources">
+    <h2>Additional Resources</h2>
+    <div class="resource">
+        <div>
+            <i class="fas fa-book"></i>
+            <h3>Grant Writing Guide</h3>
+            <p>Comprehensive guide covering all aspects of writing successful grant proposals.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div>
+            <i class="fas fa-video"></i>
+            <h3>Webinars and Tutorials</h3>
+            <p>Access live and recorded sessions to enhance your grant management skills.</p>
+            <a href="#">Watch now</a>
+        </div>
+        <div>
+            <i class="fas fa-question-circle"></i>
+            <h3>FAQs</h3>
+            <p>Find answers to common questions about our system and services.</p>
+            <a href="#">Learn more</a>
+        </div>
+        <div>
+            <i class="fas fa-headset"></i>
+            <h3>Support Center</h3>
+            <p>Get help with technical issues and learn how to use specific features.</p>
+            <a href="#">Visit support</a>
+        </div>
+        <div>
+            <i class="fas fa-file-alt"></i>
+            <h3>Case Studies</h3>
+            <p>Read about how other organizations have successfully used our system.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div>
+            <i class="fas fa-envelope"></i>
+            <h3>Newsletter Sign-up</h3>
+            <p>Stay updated with the latest news, tips, and grant opportunities.</p>
+            <a href="#">Sign up</a>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>
+        <a href="#privacy" style="color: #ccc; text-decoration: none;">Privacy Policy</a> | 
+        <a href="#terms" style="color: #ccc; text-decoration: none;">Terms of Service</a>
+    </p>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const row1 = document.getElementById('row1');
+        const row2 = document.getElementById('row2');
+        const row3 = document.getElementById('row3');
+
+        const cloneItems = (row) => {
+            const items = row.querySelectorAll('.carousel-item');
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                row.appendChild(clone);
+            });
+        };
+
+        [row1, row2, row3].forEach(cloneItems);
+    });
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Grant Management System - Smart Matching</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f4f6f9;
+        }
+
+        header, nav, main, footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .smart-matching {
+            margin: 20px 0;
+        }
+
+        .smart-matching input, .smart-matching textarea, .smart-matching button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .results {
+            margin: 20px 0;
+        }
+
+        .results div {
+            background: #e1e1e1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Remote Grant Management System - Smart Matching</h1>
+</header>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="#dashboard">Dashboard</a>
+</nav>
+<main class="container">
+    <section class="content smart-matching">
+        <h2>Find the Best Grants for You</h2>
+        <p>Enter your profile information to receive personalized grant matches.</p>
+        <form id="matching-form">
+            <textarea id="user-profile" placeholder="Enter your profile details here..."></textarea>
+            <button type="button" onclick="findMatches()">Find Matches</button>
+        </form>
+        <div class="results" id="results"></div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Remote Grant Management System. All Rights Reserved.</p>
+</footer>
+<script>
+    function findMatches() {
+        const profile = document.getElementById('user-profile').value;
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '<p>Finding matches...</p>';
+
+        // Simulate an API call to the backend AI system
+        fetch('http://localhost:5000/match', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ profile }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            resultsDiv.innerHTML = '';
+            data.matches.forEach(match => {
+                const matchDiv = document.createElement('div');
+                matchDiv.innerHTML = `<h3>${match.title}</h3><p>${match.description}</p>`;
+                const feedbackButton = document.createElement('button');
+                feedbackButton.innerText = 'Provide Feedback';
+                feedbackButton.onclick = () => provideFeedback(match.id);
+                matchDiv.appendChild(feedbackButton);
+                resultsDiv.appendChild(matchDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultsDiv.innerHTML = '<p>An error occurred while finding matches.</p>';
+        });
+    }
+
+    function provideFeedback(matchId) {
+        const feedback = prompt('Please provide your feedback:');
+        if (feedback) {
+            fetch('http://localhost:5000/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ matchId, feedback }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Thank you for your feedback!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while submitting feedback.');
+            });
+        }
+    }
+</script>
+</body>
+</html>
