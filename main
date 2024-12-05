@@ -1,0 +1,101 @@
+// script.js
+
+// Mock Data
+const grants = [
+    {
+        title: "Emergency Management Consulting Services",
+        source: "City of Key West, FL",
+        city: "Key West",
+        rfpId: "RFP 25-001-0-2024/LT",
+        issued: "11/7/2024",
+        expires: "12/18/2024",
+        keywords: "2 Keywords",
+        snippet: "Emergency Management Consultant",
+        docLink: "https://example.com/doc1",
+        contact: {
+            name: "Lucas Torres-Bull",
+            email: "lucas.torresbull@cityofkeywest-fl.gov",
+            phone: "(305) 809-3815",
+            agency: "City of Key West"
+        }
+    },
+    // Additional mock grants
+    {
+        title: "Community Development Grant",
+        source: "City of Austin, TX",
+        city: "Austin",
+        rfpId: "RFP 30-002-0-2024/AB",
+        issued: "10/15/2024",
+        expires: "11/30/2024",
+        keywords: "3 Keywords",
+        snippet: "Community Development Projects",
+        docLink: "https://example.com/doc2",
+        contact: {
+            name: "Amanda Brown",
+            email: "amanda.brown@austintexas.gov",
+            phone: "(512) 974-2000",
+            agency: "City of Austin"
+        }
+    },
+    {
+        title: "Educational Technology Grant",
+        source: "State of California",
+        city: "Sacramento",
+        rfpId: "RFP 45-003-0-2024/JK",
+        issued: "09/25/2024",
+        expires: "12/05/2024",
+        keywords: "5 Keywords",
+        snippet: "Technology for Educational Institutions",
+        docLink: "https://example.com/doc3",
+        contact: {
+            name: "John King",
+            email: "john.king@ca.gov",
+            phone: "(916) 555-1234",
+            agency: "State of California"
+        }
+    }
+];
+
+// Populate Table
+const grantsList = document.getElementById("grants-list");
+grants.forEach((grant, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${grant.title}</td>
+        <td>${grant.source}</td>
+        <td>${grant.city}</td>
+        <td>${grant.rfpId}</td>
+        <td>${grant.issued}</td>
+        <td>${grant.expires}</td>
+        <td><button class="btn" onclick="viewDetails(${index})">View</button></td>
+    `;
+    grantsList.appendChild(row);
+});
+
+// Show Grant Details
+function viewDetails(index) {
+    const grant = grants[index];
+    const detailsSection = document.getElementById("grant-details");
+
+    document.getElementById("detail-title").textContent = grant.title;
+    document.getElementById("detail-issued").textContent = grant.issued;
+    document.getElementById("detail-expires").textContent = grant.expires;
+    document.getElementById("detail-keywords").textContent = grant.keywords;
+    document.getElementById("detail-snippet").textContent = grant.snippet;
+    document.getElementById("detail-agency").textContent = grant.contact.agency;
+    document.getElementById("detail-contact-name").textContent = grant.contact.name;
+    document.getElementById("detail-email").textContent = grant.contact.email;
+    document.getElementById("detail-email-link").href = `mailto:${grant.contact.email}`;
+    document.getElementById("detail-phone").textContent = grant.contact.phone;
+
+    detailsSection.classList.remove("hidden");
+    detailsSection.scrollIntoView({ behavior: "smooth" });
+}
+
+// Hide Grant Details when clicking outside
+document.addEventListener("click", function(event) {
+    const detailsSection = document.getElementById("grant-details");
+    if (!detailsSection.contains(event.target) && !event.target.matches(".btn")) {
+        detailsSection.classList.add("hidden");
+    }
+});
