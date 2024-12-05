@@ -1,0 +1,165 @@
+/* styles.css */
+
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a, table, th, td, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1f2937;
+    color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1em;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    display: block;
+    border-radius: 4px;
+}
+
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background-color: #0078d4;
+}
+
+.sidebar .user-filters {
+    margin-top: auto;
+}
+
+.sidebar .user-filters input {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    border-radius: 4px;
+    margin-top: 1em;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2em;
+    overflow-y: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.main-header h2 {
+    margin-right: auto;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.header-actions .filter-input {
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.content-section {
+    background: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grants-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grants-table th, .grants-table td {
+    text-align: left;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+.grants-table th {
+    background-color: #0078d4;
+    color: white;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5em;
+}
+
+/* Grant Details */
+.details-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.details-grid div {
+    width: 48%;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #0078d4;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #005bb5;
+}
+
+a {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
